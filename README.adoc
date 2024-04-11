@@ -1,0 +1,22 @@
+= aurpkg
+
+An extremely short bash script to open the AUR page of a given package.
+
+== Usage
+
+```bash
+aurpkg <package_name>
+```
+
+=== Example
+
+```bash
+aurpkg yay
+```
+
+A browser tab should now open on the `yay` package info page.
+
+== Why?
+
+Because I am extremely lazyfootnote:[hi lazy i'm qexat]. Isn't that the reason of the existence of scripting in the first place?
+
