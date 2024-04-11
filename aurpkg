@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+failwith() {
+    printf "\x1b[1;31m%s\x1b[22;39m\n" "$1"
+    exit 1
+}
+
+# very unlikely but eh, let's try to handle all the edge cases
+if [ -z "$BROWSER" ]
+then
+    failwith "Browser is not set."
+fi
+
+if [ "$#" -lt 1 ]
+then
+    failwith "Missing package name (argument)."
+fi
+
+# input sanitization go brr
+if ! [[ "$1" =~ ^[_A-Za-z][_0-9A-Za-z]+$ ]]
+then
+    failwith "Invalid package name."
+fi
+
+"$BROWSER" "https://aur.archlinux.org/packages/$1"
