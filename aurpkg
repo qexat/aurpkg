@@ -19,7 +19,7 @@ then
 fi
 
 # input sanitization go brr
-if ! [[ "$1" =~ ^[_A-Za-z][_0-9A-Za-z]+$ ]]
+if ! [[ "$1" =~ ^[_A-Za-z][_0-9A-Za-z\-]+$ ]]
 then
     failwith "Invalid package name."
 fi
